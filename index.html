@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <title>Weather App</title>
+</head>
+<body>
+    <script src="script.js" defer></script>
+    
+    <main>
+        <form>
+            <input type="text" placeholder="Enter City">
+            <button id="enter-button" type="button">Enter</button>
+            <button style="border-right-style: solid; padding-right: 10px;" class = "temp-button" id="farenheit-button" type="button">°F</button>
+            <button class = "temp-button" id="celsius-button" type="button">°C</button>
+        </form>
+
+        <h1 id="city-name"></h1>
+
+        <div id="current-weather-card">
+            <div>
+                <img id="current-weather-image" style="height: 150px;" src="/Icons/Sun.png">
+                    <div id="temp-description"></div>
+            </div>
+            <div class = "weather-details">
+                <img style="width: 70px;" src="/Icons/Thermometer.png">
+                <p id="feels-like-temp"></p>
+                <img style="width: 70px;" src="/Icons/Wind.png">
+                <p id="wind-speed"></p>
+                <img style="width: 70px;" src="/Icons/Rain.png">
+                <p id="humidity"></p>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
