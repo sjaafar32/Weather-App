@@ -18,37 +18,40 @@ async function getWeatherData(cityNameInput, unitSystem, tempUnit, speedUnit) {
 
     weatherData = await response.json();
     console.log(weatherData);
-    console.log(weatherData.main.temp);
 
-    feelsLikeTemp.innerHTML = 'Feels Like \n' + weatherData.main.feels_like.toFixed(0) + tempUnit;
-    windSpeed.innerHTML = 'Wind Speed \n' + weatherData.wind.speed.toFixed(0) + speedUnit;
-    humidity.innerHTML = 'Humidity \n' + weatherData.main.humidity + "%";
+    feelsLikeTemp.innerText = 'Feels Like \n' + weatherData.main.feels_like.toFixed(0) + tempUnit;
+    windSpeed.innerText = 'Wind Speed \n' + weatherData.wind.speed.toFixed(0) + speedUnit;
+    humidity.innerText = 'Humidity \n' + weatherData.main.humidity + "%";
 
     cityName.innerHTML = cityNameInput;
     tempAndDescription.innerText = weatherData.main.temp.toFixed(0) + tempUnit + '\n' + weatherData.weather[0].main;
-
+    currentWeatherImage.src = "http://openweathermap.org/img/wn/" + weatherData.weather[0].icon + "@4x.png" ;
 }
 
 
 enterButton.addEventListener('click', () => {
     getWeatherData(input.value, 'imperial', ' °F', ' mph').catch(function(error) {
-        console.log('Could not retrieve data');
+        alert('Could not retrieve data');
     });
     farenheitButton.style.setProperty('text-decoration', 'underline');
     celsiusButton.style.setProperty('text-decoration', 'none');
 });
 
 farenheitButton.addEventListener('click', () => {
-    getWeatherData(input.value, 'imperial', ' °F', ' mph').catch(function(error) {
-        console.log('Could not retreive data');
+    let cityName = input.value;
+    if(input.value == ''){ cityName = 'New York';}
+    getWeatherData(cityName, 'imperial', ' °F', ' mph').catch(function(error) {
+        alert('Could not retreive data');
     });
     farenheitButton.style.setProperty('text-decoration', 'underline');
     celsiusButton.style.setProperty('text-decoration', 'none');
 })
 
 celsiusButton.addEventListener('click', () => {
-    getWeatherData(input.value, 'metric', ' °C', ' m/s').catch(function(error) {
-        console.log('Could not retrieve data');
+    let cityName = input.value;
+    if(input.value == ''){ cityName = 'New York';}
+    getWeatherData(cityName, 'metric', ' °C', ' m/s').catch(function(error) {
+        alert('Could not retrieve data');
     });
     farenheitButton.style.setProperty('text-decoration', 'none');
     celsiusButton.style.setProperty('text-decoration', 'underline');
@@ -56,7 +59,7 @@ celsiusButton.addEventListener('click', () => {
 
 window.onload = function(){
     getWeatherData('New York', 'imperial', ' °F', ' mph').catch(function(error) {
-        console.log('Could not retrieve data');
+        alert('Could not retrieve data');
     });
     farenheitButton.style.setProperty('text-decoration', 'underline');
     celsiusButton.style.setProperty('text-decoration', 'none');
