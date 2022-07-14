@@ -15,7 +15,7 @@ let weatherData;
 let country;
 
 async function getWeatherData(cityNameInput, unitSystem, tempUnit, speedUnit) {
-    const response = await fetch('http://api.openweathermap.org/data/2.5/weather?q=' + cityNameInput + '&APPID=b39b9d581bd43650a4e390d75360effb&units=' + unitSystem, {mode: 'cors'});
+    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityNameInput + '&APPID=b39b9d581bd43650a4e390d75360effb&units=' + unitSystem, {mode: 'cors'});
 
     weatherData = await response.json();
     console.log(weatherData);
