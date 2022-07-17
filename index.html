@@ -14,7 +14,7 @@
         <div>
         <form>
             <input type="text" placeholder="Enter City">
-            <button id="enter-button" type="button"><img style="height: 20px;" src="./Icons/1200px-Magnifying_glass_icon.jpg"></button>
+            <button id="search-button" type="button"><img style="height: 20px;" src="./Icons/1200px-Magnifying_glass_icon.jpg"></button>
             <button style="border-right-style: solid; padding-right: 10px;" class = "temp-button" id="farenheit-button" type="button">°F</button>
             <button class = "temp-button" id="celsius-button" type="button">°C</button>
         </form>
@@ -23,9 +23,9 @@
         <h1 id="city-name"></h1>
 
         <div id="current-weather-card">
-            <div>
+            <div style="text-align: center;">
                 <img id="current-weather-image">
-                    <div id="temp-description"></div>
+                <div id="temp-description"></div>
             </div>
             
             <div class = "weather-details">
@@ -33,10 +33,16 @@
                 <p id="feels-like-temp"></p>
                 <img style="width: 70px;" src="./Icons/Wind.jpg">
                 <p id="wind-speed"></p>
-                <img style="width: 70px;" src="./Icons/Rain.jpg">
+                <img style="width: 70px;" src="./Icons/Humidity.png">
                 <p id="humidity"></p>
             </div>
+            
+            <div id="five-day-forecast">
+                
+            </div>
         </div>
+
+        
 
     </main>
 </body>

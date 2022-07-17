@@ -19,7 +19,7 @@ input {
     outline: none;
 }
 
-#enter-button {
+#search-button {
     width: 50px;
     height: 50px;
     border-style: none;
@@ -42,15 +42,16 @@ input {
 }
 
 #current-weather-card {
-    width: 550px;
-    height: 350px;
+    width: 650px;
+    height: 600px;
     border-style: none;
     border-radius: 10px;
     box-shadow: 8px 8px 20px rgb(224, 224, 224);
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-row-gap: 20px;
     background-color: rgb(190, 245, 255);
-    padding-left: 50px;
 }
 
 .weather-details {
@@ -63,7 +64,7 @@ input {
     font-size: 20px;
     font-weight: bold;
     color: white;
-    margin-left: 90px;
+    margin-left: 30px;
     margin-top: 30px;
     align-items: center;
 }
@@ -78,4 +79,28 @@ input {
 p {
     display: flex;
     align-items: center;
+}
+
+#five-day-forecast {
+    width: 650px;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    border-style: none;
+    margin-top: 20px;
+}
+
+.future-day-card {
+    width: 145px;
+    height: 230px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: .25fr 1fr 1fr 1fr;
+    grid-row-gap: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    border-color: white;
+    border-width: 3px;
+    text-align: center;
 }
