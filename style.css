@@ -43,14 +43,14 @@ input {
 
 #current-weather-card {
     width: 650px;
-    height: 600px;
+    height: 630px;
     border-style: none;
     border-radius: 10px;
     box-shadow: 8px 8px 20px rgb(224, 224, 224);
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
-    grid-row-gap: 20px;
+    grid-row-gap: 40px;
     background-color: rgb(190, 245, 255);
 }
 
